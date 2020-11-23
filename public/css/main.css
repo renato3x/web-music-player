@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
 :root {
-  --primary: #417CFA;  
-  --secondary: #8CAFFB;
-  --primary-dark: #203D7A;
-  --secondary-dark: #3462C7;
+  --primary:#2379DB;  
+  --secondary:#68A0E1;
+  --primary-dark:#1B5DA8;
+  --secondary-dark: #0F335C;
 }
 
 * {
@@ -41,6 +41,7 @@ body {
   display: inline-block;
   width: 75%;
   box-shadow: 0 0 10px #11111169;
+  object-fit: cover;
 }
 
 #player .music-data {
@@ -71,6 +72,7 @@ body {
   width: 50%;
   display: flex;
   justify-content: space-around;
+  margin-top: 1rem;
 }
 
 #player .controls .btn-container button {
@@ -94,6 +96,56 @@ body {
 }
 
 #player .controls .btn-container button i {
-  display: block;
-  font-size: 1.5rem;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+#player .controls .progress {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+#player .controls .progress #progress-bar {
+  appearance: none;
+  height: .07rem;
+  outline: none;
+  box-shadow: 0 0 10px #11111169;
+}
+
+#player .controls .progress #progress-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+}
+
+#player .controls .config {
+  margin-top: 1rem;
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#player .controls .config button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+#player .controls .config button i {
+  text-shadow: 2px 1px 1px #11111169;
+  transition: all .3s;
+}
+
+#player .controls .config button i:hover {
+  cursor: pointer;
+  transform: scale(1.3) translateX(-3px);
 }
