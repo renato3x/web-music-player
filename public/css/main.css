@@ -115,6 +115,7 @@ body {
   height: .07rem;
   outline: none;
   box-shadow: 0 0 10px #11111169;
+  cursor: pointer;
 }
 
 #player .controls .progress #progress-bar::-webkit-slider-thumb {
