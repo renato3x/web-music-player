@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+:root {
+  --primary: #417CFA;  
+  --secondary: #8CAFFB;
+  --primary-dark: #203D7A;
+  --secondary-dark: #3462C7;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+}
+
+#player {
+  width: 30%;
+  height: 90%;
+  box-shadow: 0 0 6px #11111169;
+  background: linear-gradient(45deg, var(--secondary) 40%, var(--secondary-dark));
+}
