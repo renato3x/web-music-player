@@ -18,3 +18,19 @@ const tracks = [
     audio: '../public/audio/ride.mp3'
   }
 ]
+
+window.addEventListener('load', () => {
+  const musicPlayer = new MusicPlayer(
+    document.querySelector('.music-thumb'),
+    document.querySelector('.music-title'),
+    document.querySelector('.author'),
+    document.querySelector('#progress-bar'),
+    document.querySelector('#music-state'),
+    document.querySelector('#next'),
+    document.querySelector('#previous'),
+    document.querySelector('#audio'),
+    tracks
+  )
+
+  musicPlayer.start()
+})
