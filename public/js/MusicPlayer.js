@@ -33,6 +33,26 @@ class MusicPlayer {
     this.audioStateButton.addEventListener('click', () => {
       this.setAudioState()
     })
+
+    this.nextButton.addEventListener('click', () => {
+      this.next()
+    })
+
+    this.previousButton.addEventListener('click', () => {
+      this.previous()
+    })
+
+    this.audioElement.addEventListener('timeupdate', () => {
+      const { currentTime, duration } = this.audioElement
+
+      if (currentTime == 0) {
+        this.progressBar.value = 0
+      } else if (currentTime == duration) {
+        this.next()
+      } else {
+        this.progressBar.value = ((100 * currentTime / duration) / 100).toFixed(2)
+      }
+    })
   }
 
   setTrack(index = 0) {
@@ -60,7 +80,7 @@ class MusicPlayer {
   decrementsTrackListIndex() {
     this.tracklistIndex--
 
-    if (this.tracklistIndex > 0) {
+    if (this.tracklistIndex < 0) {
       this.tracklistIndex = this.tracklist.length - 1
     }
   }
@@ -77,5 +97,25 @@ class MusicPlayer {
 
       icon.classList = 'fas fa-play'
     }
+  }
+
+  next() {
+    const icon = this.audioStateButton.firstElementChild
+
+    this.incrementsTrackListIndex()
+    this.setTrack(this.tracklistIndex)
+    this.audioElement.autoplay = true
+
+    icon.classList = 'fas fa-pause'
+  }
+
+  previous() {
+    const icon = this.audioStateButton.firstElementChild
+
+    this.decrementsTrackListIndex()
+    this.setTrack(this.tracklistIndex)
+    this.audioElement.autoplay = true
+
+    icon.classList = 'fas fa-pause'
   }
 }
