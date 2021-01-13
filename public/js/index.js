@@ -7,7 +7,7 @@ const tracks = [
   },
   {
     title: 'Ark',
-    author: 'ship Wrek & Zookeepers',
+    author: 'Ship Wrek & Zookeepers',
     thumb: '../public/img/ark.jpg',
     audio: '../public/audio/ark.mp3'
   },
