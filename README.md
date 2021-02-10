@@ -1,2 +1,3 @@
 # web-music-player
-Music player made with HTML, CSS and JavaScript
+
+![Music Player design](design/music_player.png)
