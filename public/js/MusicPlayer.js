@@ -110,12 +110,16 @@ class MusicPlayer {
   }
 
   previous() {
-    const icon = this.audioStateButton.firstElementChild
-
-    this.decrementsTrackListIndex()
-    this.setTrack(this.tracklistIndex)
-    this.audioElement.autoplay = true
-
-    icon.classList = 'fas fa-pause'
+    if (this.audioElement.currentTime > 3) {
+      this.audioElement.currentTime = 0
+    } else {
+      const icon = this.audioStateButton.firstElementChild
+  
+      this.decrementsTrackListIndex()
+      this.setTrack(this.tracklistIndex)
+      this.audioElement.autoplay = true
+  
+      icon.classList = 'fas fa-pause'
+    }
   }
 }
